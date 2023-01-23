@@ -1,0 +1,147 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-01-21T04:28:31.038Z",
+  "__export_source": "insomnia.desktop.app:v2022.7.4",
+  "resources": [
+    {
+      "_id": "req_70cdf8cffcdc4751a1652d4b97cfa78a",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674273257508,
+      "created": 1674270934577,
+      "url": "{{ _.BASE_URL }}",
+      "name": "status",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1674270932368,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "parentId": null,
+      "modified": 1674270906854,
+      "created": 1674270906854,
+      "name": "movienotes-api",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_084d0db985ea4d8c9d9eb637ee40c9d2",
+      "parentId": "fld_c46a88ec31b64633bc3e749d7bd06402",
+      "modified": 1674275263963,
+      "created": 1674273241555,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}",
+      "name": "create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"usuario\",\n\t\"email\": \"\",\n\t\"password\": \"1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674273241555,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c46a88ec31b64633bc3e749d7bd06402",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674273765262,
+      "created": 1674270932418,
+      "name": "users",
+      "description": "",
+      "environment": {
+        "RESOURCE": "users"
+      },
+      "environmentPropertyOrder": {
+        "&": [
+          "RESOURCE"
+        ]
+      },
+      "metaSortKey": -1674270932318,
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_148508135f0222d839df04648df08fd595daed47",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674270906857,
+      "created": 1674270906857,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1674270906857,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_148508135f0222d839df04648df08fd595daed47",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674270906858,
+      "created": 1674270906858,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_ee3563465de441518724aeb7e0d61325",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674270906854,
+      "created": 1674270906854,
+      "fileName": "movienotes-api",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_709d8664cf754262b1eb27513b17fd18",
+      "parentId": "env_148508135f0222d839df04648df08fd595daed47",
+      "modified": 1674271034041,
+      "created": 1674270973195,
+      "name": "DEV",
+      "data": {
+        "PROTOCOL": "http",
+        "HOST": "localhost",
+        "PORT": "3333",
+        "BASE_URL": "{{ _.PROTOCOL }}://{{ _.HOST }}:{{ _.PORT }}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "PROTOCOL",
+          "HOST",
+          "PORT",
+          "BASE_URL"
+        ]
+      },
+      "color": "#00ff00",
+      "isPrivate": false,
+      "metaSortKey": 1674270973195,
+      "_type": "environment"
+    }
+  ]
+}
