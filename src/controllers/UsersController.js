@@ -1,5 +1,6 @@
 const AppError = require("../utils/AppError")
 const sqliteConn = require('../database/sqlite')
+const validEmail = require("../utils/validEmail")
 
 class UsersController {
 
@@ -17,6 +18,8 @@ class UsersController {
     )
 
     if (checkUserExists) throw new AppError('E-mail já cadastrado!')
+
+    if(!validEmail(email)) throw new AppError('E-mail inválido!')
 
     const user = await db.run(
       'INSERT INTO users (name, email, password) VALUES ( ?, ?, ? )',
