@@ -33,6 +33,12 @@ class UsersController {
     res.status(201).json({ name, email })
   }
 
+  async update(req, res) {
+
+
+
+    res.status(200).json({ ...req.params, ...req.body })
+  }
 }
 
 module.exports = UsersController
