@@ -1,8 +1,8 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2023-01-21T04:28:31.038Z",
-  "__export_source": "insomnia.desktop.app:v2022.7.4",
+  "__export_date": "2023-01-24T19:05:02.439Z",
+  "__export_source": "insomnia.desktop.app:v2022.7.5",
   "resources": [
     {
       "_id": "req_70cdf8cffcdc4751a1652d4b97cfa78a",
@@ -40,7 +40,7 @@
     {
       "_id": "req_084d0db985ea4d8c9d9eb637ee40c9d2",
       "parentId": "fld_c46a88ec31b64633bc3e749d7bd06402",
-      "modified": 1674275263963,
+      "modified": 1674568692522,
       "created": 1674273241555,
       "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}",
       "name": "create",
@@ -48,7 +48,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"usuario\",\n\t\"email\": \"\",\n\t\"password\": \"1234\"\n}"
+        "text": "{\n\t\"name\": \"Usuario4\",\n\t\"email\": \"Usuario4@email.com.br\",\n\t\"password\": \"123456\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -84,6 +84,86 @@
         ]
       },
       "metaSortKey": -1674270932318,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ead942682a6b46dcb2dd99b620edd36f",
+      "parentId": "fld_c46a88ec31b64633bc3e749d7bd06402",
+      "modified": 1674567455065,
+      "created": 1674527250097,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/9",
+      "name": "update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Usuario1\",\n\t\"email\": \"usuario1@email.com\",\n\t\"password\": \"1234\",\n\t\"new_password\": \"1234\"\n\t\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674272086961.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c7da036fb07b4738834512269b7ce699",
+      "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "modified": 1674586848369,
+      "created": 1674585258803,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/8",
+      "name": "create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"E o vento levou\",\n\t\"description\": \"filme antigo\",\n\t\"rating\": 5\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674273241555,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "parentId": "wrk_79692c5fd42f41af9d0c7b82c7d3bdda",
+      "modified": 1674585278349,
+      "created": 1674585258801,
+      "name": "movies",
+      "description": "",
+      "environment": {
+        "RESOURCE": "movies"
+      },
+      "environmentPropertyOrder": {
+        "&": [
+          "RESOURCE"
+        ]
+      },
+      "metaSortKey": -1673914434063.75,
       "_type": "request_group"
     },
     {
