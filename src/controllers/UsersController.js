@@ -1,6 +1,8 @@
-const AppError = require("../utils/AppError")
+const AppError = require('../utils/AppError')
 const sqliteConn = require('../database/sqlite')
-const validEmail = require("../utils/validEmail")
+const validEmail = require('../utils/validEmail')
+const { hash } = require('bcryptjs')
+
 
 class UsersController {
 
@@ -19,11 +21,13 @@ class UsersController {
 
     if (checkUserExists) throw new AppError('E-mail já cadastrado!')
 
-    if(!validEmail(email)) throw new AppError('E-mail inválido!')
+    if (!validEmail(email)) throw new AppError('E-mail inválido!')
+
+    const hashedPassword = await hash(password, 8)
 
     const user = await db.run(
       'INSERT INTO users (name, email, password) VALUES ( ?, ?, ? )',
-      [name, email, password]
+      [name, email, hashedPassword]
     )
 
     res.status(201).json({ name, email })
