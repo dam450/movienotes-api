@@ -1,18 +1,13 @@
-/**
- * @typedef {{title: string, description: string,
- * rating: number, tags: [string]}} movie
- */
-
 const knex = require('../database/knex')
 
 const AppError = require('../utils/AppError')
 
 class MoviesController {
+
   async create(req, res) {
 
     const { user_id } = req.params
 
-    /**@type movie */
     const { title, description, rating, tags} = req.body
 
     if (isNaN(rating)) throw new AppError('Valor de rating inválido.')
