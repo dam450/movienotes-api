@@ -1,7 +1,7 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2023-01-24T19:05:02.439Z",
+  "__export_date": "2023-01-26T16:21:38.108Z",
   "__export_source": "insomnia.desktop.app:v2022.7.5",
   "resources": [
     {
@@ -120,15 +120,15 @@
     {
       "_id": "req_c7da036fb07b4738834512269b7ce699",
       "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
-      "modified": 1674586848369,
+      "modified": 1674675184378,
       "created": 1674585258803,
-      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/8",
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/",
       "name": "create",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"title\": \"E o vento levou\",\n\t\"description\": \"filme antigo\",\n\t\"rating\": 5\n}"
+        "text": "{\n\t\"user_id\": 8,\n\t\"title\": \"E o vento levou\",\n\t\"description\": \"filme antigo\",\n\t\"rating\": 5,\n\t\"tags\": [\n\t\t\"classic\"\n\t]\n}\n"
       },
       "parameters": [],
       "headers": [
@@ -165,6 +165,130 @@
       },
       "metaSortKey": -1673914434063.75,
       "_type": "request_group"
+    },
+    {
+      "_id": "req_955b69204abe4286ab5de33b66015018",
+      "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "modified": 1674691351981,
+      "created": 1674673768009,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/2",
+      "name": "update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"update\"\n\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674272664258.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1a12db85a7f14c60826126b0530e2452",
+      "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "modified": 1674691256430,
+      "created": 1674674692987,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/6",
+      "name": "delete",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\"user_id\": 8\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674272519934.0625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6624a33aaef24241a4286a7ee140d836",
+      "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "modified": 1674704651987,
+      "created": 1674673775453,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/",
+      "name": "index",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"user_id\": 8\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674272483853.0156,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_224705959e2343029663945fa3f50c25",
+      "parentId": "fld_8984e229dfdc4b319b6e88e06b545696",
+      "modified": 1674692727227,
+      "created": 1674673783665,
+      "url": "{{ _.BASE_URL }}/{{ _.RESOURCE }}/2",
+      "name": "show",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\"user_id\": 8\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1674272447771.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
     },
     {
       "_id": "env_148508135f0222d839df04648df08fd595daed47",
