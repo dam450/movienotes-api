@@ -1,0 +1,6 @@
+AUTOINCREMENT
+DATETIME
+knexfile
+movienotes
+postgresql
+sqlite
