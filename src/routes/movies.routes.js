@@ -6,7 +6,11 @@ const moviesController = new MoviesController()
 
 const moviesRoutes = Router()
 
-moviesRoutes.post('/:user_id', moviesController.create)
+moviesRoutes.post('/', moviesController.create)
+moviesRoutes.put('/:id', moviesController.update)
+moviesRoutes.delete('/:id', moviesController.delete)
+moviesRoutes.get('/', moviesController.index)
+moviesRoutes.get('/:id', moviesController.show)
 
 
 module.exports = moviesRoutes
