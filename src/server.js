@@ -1,11 +1,13 @@
-const express = require('express')
 require('express-async-errors')
+require('dotenv/config')
 
+const express = require('express')
 const AppError = require('./utils/AppError')
 const routes = require('./routes')
 const migrationsRun = require('./database/sqlite/migrations')
 
-const PORT = 3333
+const PORT = process.env.PORT || 3003
+
 const app = express()
 app.use(express.json())
 app.use(routes)
