@@ -1,10 +1,11 @@
 const knex = require('../database/knex')
 const AppError = require('../utils/AppError')
-const bcrypt = require('bcryptjs')
+const { compare } = require('bcryptjs')
+const { jwt } = require('../configs/auth')
+const { sign,  } = require('jsonwebtoken')
 
 class SessionsController {
   async create(req, res) {
-
     const { email, password } = req.body
 
     if (!email || !password)
@@ -13,14 +14,20 @@ class SessionsController {
     const user = await knex('users').where({ email }).first()
     if (!user) throw new AppError('Usuário não encontrado', 404)
 
-    const isPasswordValid = await bcrypt.compare(password, user.password)
+    const isPasswordValid = await compare(password, user.password)
     if (!isPasswordValid) throw new AppError('Senha incorreta', 401)
 
+    const { expiresIn, secret } = jwt
+    const token = sign({}, secret, { subject: String(user.id), expiresIn })
 
+    const userData = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar
+    }
 
-
-
-    res.status(201).json({ user })
+    return res.status(201).json({ token, user: userData })
   }
 }
 
