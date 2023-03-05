@@ -11,14 +11,19 @@ class SessionsController {
     if (!email || !password)
       throw new AppError('email e senha obrigatórios', 400)
 
-    const user = await knex('users').where({ email }).first()
+    // const user = await knex('users').where({ email }).first()
+    const user = await knex('users')
+      .where(knex.raw('LOWER(email) = LOWER(?)', [email]))
+      .first()
+
     if (!user) throw new AppError('Usuário não encontrado', 404)
 
     const isPasswordValid = await compare(password, user.password)
     if (!isPasswordValid) throw new AppError('Senha incorreta', 401)
 
     const { expiresIn, secret } = jwt
-    const token = sign({}, secret, { subject: String(user.id), expiresIn })
+    const payload = { user:{email, name: user.name, avatar: user.avatar} }
+    const token = sign(payload, secret, { subject: String(user.id), expiresIn })
 
     const userData = {
       id: user.id,

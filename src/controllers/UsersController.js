@@ -35,7 +35,7 @@ class UsersController {
 
   async update(req, res) {
 
-    const { id } = req.params
+    const { id } = req.user // req.params
     const { name, email, password, new_password } = req.body
 
     if (email && !validEmail(email))
