@@ -9,13 +9,16 @@ const MULTER = {
   storage: multer.diskStorage({
     destination: TMP_FOLDER,
     filename(request, file, callback) {
-      const fileHash = crypto.randomBytes(10).toString('hex')
-      const filename = `${fileHash}-${file.originalname}`
+      const uuid = crypto.randomUUID({ disableEntropyCache: true })
+      const filename = `${uuid}-${file.originalname}`
 
       return callback(null, filename)
     },
   }),
 }
+
+// const uuid = crypto.randomUUID({ disableEntropyCache: true })
+// console.log(uuid)
 
 module.exports = {
   TMP_FOLDER,
