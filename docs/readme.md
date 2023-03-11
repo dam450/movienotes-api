@@ -10,7 +10,8 @@ Uma aplicação em Node.js onde o usuário cadastra os filmes que assistiu, pree
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=movienotes&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fdam450%2Fmovienotes-api%2Fmain%2Fdocs%2Finsomnia%2FInsomnia_config.json)
 
-Arquivo de configuração de [requisições do Insomnia](./insomnia/Insomnia_config.json).
+Baixe o arquivo de configuração de [requisições do Insomnia](./insomnia/Insomnia_config.json) ou importe no botão acima.
+
 
 ### Usuários
 
