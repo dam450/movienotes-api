@@ -1,10 +1,16 @@
 
 # Movienotes API
 
-Uma aplicação em Node.js onde o usuário cadastra filmes, preenche com algumas informações (nome, descrição, nota) e cria tags de categorias relacionadas a ele (comédia, terror, ação etc).
+Uma aplicação em Node.js onde o usuário cadastra os filmes que assistiu, preenche com suas informações (nome, descrição, nota) e cria tags de categorias relacionadas a ele (comédia, terror, ação etc).
 
 
 ## Documentação da API
+
+### Teste da API com Insomnia
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=movienotes&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fdam450%2Fmovienotes-api%2Fmain%2Fdocs%2Finsomnia%2FInsomnia_config.json)
+
+Arquivo de configuração de [requisições do Insomnia](./insomnia/Insomnia_config.json).
 
 ### Usuários
 
@@ -87,10 +93,8 @@ Inicie o servidor
   npm run start
 ```
 
-### Teste da API com Insomnia
 
-Configuração de rotas do [Insomnia](./insomnia/Insomnia_config).
-## Documentação
+## Banco de Dados
 
 Diagrama do banco de dados:
 
