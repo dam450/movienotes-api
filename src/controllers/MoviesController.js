@@ -89,12 +89,25 @@ class MoviesController {
   async index(req, res) {
 
     const { id: user_id } = req.user
+    const { title = '' } = req.query
 
-    const movieNotes = await knex('movie_notes')
+
+      const movieNotes = await knex('movie_notes')
       .where({ user_id })
+      .whereLike('title', `%${title}%`)
       .orderBy('created_at')
 
-    res.json([ ...movieNotes ])
+
+    const movieTags = await knex('movie_tags')
+      .select(['id', 'note_id', 'name'])
+      .where({ user_id }).orderBy('name', 'asc')
+
+    const moviesWithTags = movieNotes.map(movie => {
+      const tags = movieTags.filter(tag => tag.note_id === movie.id)
+      return {...movie, tags }
+    })
+
+    res.json(moviesWithTags)
   }
 
   async show(req, res) {
