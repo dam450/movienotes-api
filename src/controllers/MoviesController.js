@@ -37,12 +37,40 @@ class MoviesController {
   }
 
   async update(req, res) {
-    /**
-     * @todo criar update de movies
-     */
+    const { id: user_id } = req.user
+    const { id } = req.params
+    const { title, description, rating, tags } = req.body
 
-    console.count('UPDATE')
-    res.json({update: 'not available', ...req.params, ...req.body })
+    if (!title) throw new AppError('Informe o título do filme', 400)
+
+    if (isNaN(rating)) throw new AppError('Valor de rating inválido.')
+
+    const ratingValue = Number(rating)
+
+    if (ratingValue > 5 || ratingValue < 0)
+      throw new AppError('Rating: informe um valor inteiro entre 1 e 5.')
+
+    const now = new Date().toISOString().replace('T', ' ').slice(0, 19)
+
+    await knex('movie_notes')
+      .update({
+        title,
+        description,
+        rating: ratingValue,
+        updated_at: now
+      })
+      .where({ id, user_id })
+
+    await knex('movie_tags').where({ note_id: id, user_id }).delete()
+
+    const hasTags = tags?.length > 0
+
+    if (hasTags) {
+      const tagsInsert = tags.map(name => ({ note_id: id, user_id, name }))
+      await knex('movie_tags').insert(tagsInsert)
+    }
+
+    res.json({ update: 'ok' })
   }
 
   async delete(req, res) {
