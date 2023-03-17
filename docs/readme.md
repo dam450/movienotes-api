@@ -3,6 +3,9 @@
 
 Uma aplicação em Node.js onde o usuário cadastra os filmes que assistiu, preenche com suas informações (nome, descrição, nota) e cria tags de categorias relacionadas a ele (comédia, terror, ação etc).
 
+## Front-end
+
+Repositório do front-end do projeto: [Github.com/dam450/RocketMovies](https://github.com/dam450/RocketMovies)
 
 ## Documentação da API
 
