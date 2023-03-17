@@ -2,7 +2,8 @@ const knex = require('../database/knex')
 const AppError = require('../utils/AppError')
 const { compare } = require('bcryptjs')
 const { jwt } = require('../configs/auth')
-const { sign,  } = require('jsonwebtoken')
+const { sign } = require('jsonwebtoken')
+const validEmail = require('../utils/validEmail')
 
 class SessionsController {
   async create(req, res) {
@@ -10,6 +11,9 @@ class SessionsController {
 
     if (!email || !password)
       throw new AppError('email e senha obrigatórios', 400)
+
+    if (!validEmail(email))
+      throw new AppError('E-mail inválido.')
 
     // const user = await knex('users').where({ email }).first()
     const user = await knex('users')
