@@ -2,13 +2,22 @@ require('express-async-errors')
 require('dotenv/config')
 
 const express = require('express')
+const cors = require('cors')
+
 const AppError = require('./utils/AppError')
 const routes = require('./routes')
 const migrationsRun = require('./database/sqlite/migrations')
+const uploadConfig = require('./configs/upload')
 
 const PORT = process.env.PORT || 3003
 
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+}
+
 const app = express()
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(routes)
 
