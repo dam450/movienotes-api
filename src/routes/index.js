@@ -8,7 +8,8 @@ const sessionsRoutes = require('./sessions.routes')
 const routes = Router()
 
 routes.get('/', (req, res) => {
-  res.send('Server Online!')
+  const now = new Date().toISOString()
+  res.send(`Server Online! [${now}]`)
 })
 
 routes.use('/users', usersRoutes)
