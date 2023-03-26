@@ -13,8 +13,10 @@ Repositório do front-end do projeto: [Github.com/dam450/RocketMovies](https://g
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=movienotes&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fdam450%2Fmovienotes-api%2Fmain%2Fdocs%2Finsomnia%2FInsomnia_config.json)
 
-Baixe o arquivo de configuração de [requisições do Insomnia](./insomnia/Insomnia_config.json) ou importe no botão acima.
+<p>
+Faça download do arquivo de configuração de <a href="./insomnia/Insomnia_config.json" download > requisições do Insomnia</a> ou importe no botão acima.
 
+</p>
 
 ### Usuários
 
