@@ -9,16 +9,20 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: resolve(__dirname, 'src', 'database', 'database.db')
+      filename: resolve(__dirname, 'src', 'database', 'database.db'),
     },
     pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb)
+      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
     },
     migrations: {
-      directory: resolve(__dirname, 'src', 'database', 'knex', 'migrations')
+      directory: resolve(__dirname, 'src', 'database', 'knex', 'migrations'),
     },
-    useNullAsDefault: true
-  }
+    seeds: {
+      directory: resolve(__dirname, 'src', 'database', 'knex', 'seeds'),
+    },
+    useNullAsDefault: true,
+    debug: false,
+  },
 }
 
 /*
